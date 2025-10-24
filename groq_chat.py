@@ -17,7 +17,7 @@ def chat_with_groq(prompt):
             "Content-Type": "application/json",
         }
         payload = {
-            "model": "gpt-4o-mini",
+            "model": "llama-3.3-70b-versatile",
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0.7
         }
@@ -29,6 +29,7 @@ def chat_with_groq(prompt):
 
     except Exception as e:
         return f"Error: {str(e)}"
+
 
 
 
