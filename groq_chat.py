@@ -11,7 +11,7 @@ if not GROQ_API_KEY:
 
 def chat_with_groq(prompt):
     """
-    you are helpfull assistant to response with a given user prompt
+    you are helpfull assistant to response with a given user prompt and give some suggestion
     """
     try:
         url = "https://api.groq.com/openai/v1/chat/completions"
@@ -32,6 +32,7 @@ def chat_with_groq(prompt):
 
     except Exception as e:
         return f"Error: {str(e)}"
+
 
 
 
