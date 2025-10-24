@@ -22,11 +22,12 @@ def chat_with_groq(prompt):
             "temperature": 0.7
         }
 
-        response = requests.post(url, headers=headers, json=payload)
+        response = requests.get(url, headers=headers, json=payload)
         response.raise_for_status()
         data = response.json()
         return data["choices"][0]["message"]["content"]
 
     except Exception as e:
         return f"Error: {str(e)}"
+
 
