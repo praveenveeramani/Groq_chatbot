@@ -11,13 +11,13 @@ def chat_with_groq(prompt):
     you are helpfull assistant to response with a given user prompt
     """
     try:
-        url = "https://api.openai.com/openai/v1/chat/completions"
+        url = "https://api.groq.com/openai/v1/chat/completions"
         headers = {
             "Authorization": f"Bearer {GROQ_API_KEY}",
             "Content-Type": "application/json",
         }
         payload = {
-            "model": "openai/gpt-oss-20b",
+            "model": "gpt-4o-mini",
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0.7
         }
@@ -29,6 +29,7 @@ def chat_with_groq(prompt):
 
     except Exception as e:
         return f"Error: {str(e)}"
+
 
 
 
