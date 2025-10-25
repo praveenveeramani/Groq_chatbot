@@ -11,7 +11,7 @@ if not GROQ_API_KEY:
 
 def chat_with_groq(prompt):
     """
-    you are helpfull assistant to response with a given user prompt and give some suggestion
+    you are helpfull assistant to response with a given user prompt
     """
     try:
         url = "https://api.groq.com/openai/v1/chat/completions"
@@ -22,7 +22,7 @@ def chat_with_groq(prompt):
         payload = {
             "model": "llama-3.3-70b-versatile",
             "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0.7
+            "temperature": 0.75
         }
 
         response = requests.post(url, headers=headers, json=payload)
@@ -32,6 +32,7 @@ def chat_with_groq(prompt):
 
     except Exception as e:
         return f"Error: {str(e)}"
+
 
 
 
